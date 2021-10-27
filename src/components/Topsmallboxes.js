@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 {/*This is the compenent for the top small boxes that have meditation, fitness, sleep,
 and quote Componenents*/ }
 
@@ -21,15 +22,35 @@ export default class Topsmallboxes extends Component {
                   </div>{/* /.col */}
                   <div className="col-sm-6">
                     <ol className="breadcrumb float-sm-right">
-                      <li className="breadcrumb-item" className="mt-4 product-share">
-                          <a href="#"  className="text-gray"> 
-                            <i className="fab fa-facebook-square fa-2x"/> Facebook
+
+
+                      <li className="breadcrumb-item active" >
+                          <a href="https://www.facebook.com/groups/theloveoftreehouses"  className="text-primary"> 
+                            <i className="fab fa-facebook-square fa-2x"/> 
                           </a>
                      </li>
 
-                      <li className="breadcrumb-item active">Instagram</li>
-                      <li className="breadcrumb-item active">Twitter</li>
-                      <li className="breadcrumb-item active">Spotify</li>
+                      <li className="breadcrumb-item active">
+                          <a href="#" className="text-primary">
+                            <i className="fab fa-twitter-square fa-2x" />
+                          </a>
+                      </li>
+
+                      <li className="breadcrumb-item active">
+                          <a href="#" className="text-green">
+                            <i className="fas fa-rss-square fa-2x" />
+                          </a>
+                      </li>
+
+
+
+                      <li className="breadcrumb-item active">
+                        <a href="#" className="text-red">
+                          <i className="fas fa-envelope-square fa-2x" />
+                        </a>
+                      </li>
+
+
                     </ol>
                   </div>{/* /.col */}
                 </div>{/* /.row */}
