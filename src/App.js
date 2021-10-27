@@ -21,6 +21,7 @@ import Quotes from './components/Quotes';
 
 
 
+
 function App() {
   return (
     <div> 
@@ -35,6 +36,7 @@ function App() {
         <Link to = "/fitness"></Link>
         <Link to = "/sleep"></Link>
         <Link to = "/quotes"></Link>
+        
         
         
 
@@ -56,11 +58,11 @@ function App() {
           <Route path = "/fitness" component ={Fitness}></Route>
           <Route path = "/sleep" component ={Sleep}></Route>
           <Route path = "/quotes" component ={Quotes}></Route>
-
+          
           
           <Route path="/" component={Topsmallboxes}></Route>
         </Switch>
-        
+     
         <Sidebar/>
       
         <Footer/>
