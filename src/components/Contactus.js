@@ -17,8 +17,8 @@ export default class Contactus extends Component {
         </div>
         <div className="col-sm-6">
           <ol className="breadcrumb float-sm-right">
-            <li className="breadcrumb-item"><a href="#">Facebook</a></li>
-            <li className="breadcrumb-item active">Instagram</li>
+            <li className="breadcrumb-item"><a href="#">Implement-Facebook</a></li>
+            <li className="breadcrumb-item active">Implement-Instagram</li>
           </ol>
         </div>
       </div>
