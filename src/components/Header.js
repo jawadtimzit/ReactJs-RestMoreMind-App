@@ -5,17 +5,17 @@ export default class Header extends Component {
         return (
             <div>
   {/* Navbar */}
-  <nav className="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav className="main-header navbar navbar-expand navbar-dark navbar-light">
     {/* Left navbar links */}
     <ul className="navbar-nav" >
-      <li className="nav-item" className = "bg-info">
+      <li className="nav-item" className = "bg-dark">
         <a className="nav-link" data-widget="pushmenu" href="#" role="button"><i className="fas fa-bars" /></a>
       </li>
       <li className="nav-item d-none d-sm-inline-block">
-        <a href="/" className="nav-link">Home</a>
+        <a href="/" className="nav-link" style={{color:'white', fontWeight:'light'}} >Home</a>
       </li>
       <li className="nav-item d-none d-sm-inline-block">
-        <a href="/aboutus" className="nav-link">About us</a>
+        <a href="/aboutus" className="nav-link" style={{color:'white', fontWeight:'light'}} >About us</a>
       </li>
     </ul>
     {/* Right navbar links */}

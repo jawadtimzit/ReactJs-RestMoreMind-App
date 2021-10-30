@@ -5,20 +5,22 @@ import React, { Component } from 'react'
 and quote Componenents*/ }
 
 export default class Topsmallboxes extends Component {
-    render() {
+   
+  
+  render() {
         return (
             
             
 
 
-            <div className="content-wrapper">
+            <div  style={{backgroundColor:'white'}}>
   
             <div className="content-header">
               <div className="container-fluid">
                 <div className="row mb-2">
                   <div className="col-sm-6">
-                    <h3 className="m-0">Are you experiencing stress and anxiety?</h3>
-                    <p> It doesn't have to be. Find more joy with RestMoreMind!</p>
+                    {/*<p className="m-0">Are you experiencing stress and anxiety?</p> */}
+                    {/*<p> It doesn't have to be. Find more joy with RestMoreMind!</p>*/}
                   </div>{/* /.col */}
                   <div className="col-sm-6">
                     <ol className="breadcrumb float-sm-right">
@@ -64,15 +66,15 @@ export default class Topsmallboxes extends Component {
         <div className="row">
           <div className="col-lg-3 col-6">
             {/* small box */}
-            <div className="small-box bg-info">
+            <div className="small-box bg-white">
               <div className="inner">
-                <h2>Meditation</h2>
-                <p>Improve health</p>
+                <h1 style = {{fontSize:14, color:'blue'}}>Meditation</h1>
+                {/*<p style = {{fontSize:10}}>Improve health</p>*/}
               </div>
               <div className="icon">
                { /*<i className="ion ion-bag" />*/}
               </div>
-              <a href="/meditation" className="small-box-footer"> <i className="fas fa-arrow-circle-right" /></a>
+              <a href="/meditation" className="small-box-footer" style={{backgroundColor:'lightgreen', fontSize:12}}> Improve health <i className="fas fa-arrow-circle-right" /></a>
             </div>
           </div>
 
@@ -81,15 +83,15 @@ export default class Topsmallboxes extends Component {
           {/* ./col */}
           <div className="col-lg-3 col-6">
             {/* small box */}
-            <div className="small-box bg-success">
+            <div className="small-box bg-white">
               <div className="inner">
-                <h2>Fitness<sup style={{fontSize: 20}}></sup></h2>
-                <p>Increase sense of well-being</p>
+                <h1 style = {{fontSize:14, color: 'blue'}} >Fitness</h1>
+                {/*<p style = {{fontSize:10}}>Increase sense of well-being</p>*/}
               </div>
               <div className="icon">
                 {/*<i className="ion ion-stats-bars" />*/}
               </div>
-              <a href="fitness" className="small-box-footer"> <i className="fas fa-arrow-circle-right" /></a>
+              <a href="fitness" className="small-box-footer" style={{backgroundColor:'lightgreen', fontSize:12}}> Increase sense of well-being<i className="fas fa-arrow-circle-right" /></a>
             </div>
           </div>
 
@@ -99,15 +101,15 @@ export default class Topsmallboxes extends Component {
           {/* ./col */}
           <div className="col-lg-3 col-6">
             {/* small box */}
-            <div className="small-box bg-warning">
+            <div className="small-box bg-white">
               <div className="inner">
-                <h2>Sleep</h2>
-                <p>Improve energy and mode</p>
+                <h1 style = {{fontSize:14, color:'blue'}}>Sleep</h1>
+        {/*<p style = {{fontSize:10}}>Improve energy and mode</p>*/}
               </div>
               <div className="icon">
                 {/*<i className="ion ion-person-add" />*/}
               </div>
-              <a href="sleep" className="small-box-footer"> <i className="fas fa-arrow-circle-right" /></a>
+              <a href="sleep" className="small-box-footer" style={{backgroundColor:'lightgreen', fontSize:12}}> Improve energy and mode<i className="fas fa-arrow-circle-right" /></a>
             </div>
           </div>
 
@@ -117,15 +119,15 @@ export default class Topsmallboxes extends Component {
           {/* ./col */}
           <div className="col-lg-3 col-6">
             {/* small box */}
-            <div className="small-box bg-olive">
+            <div className="small-box bg-white">
               <div className="inner">
-                <h2>Quotes</h2>
-                <p>Stay motivated</p>
+                <h1 style = {{fontSize:14, color:'blue'}}>Quotes</h1>
+                {/*<p style = {{fontSize:10}}>Stay motivated</p>*/}
               </div>
               <div className="icon">
                 {/*<i className="ion ion-pie-graph" />*/}
               </div>
-              <a href="quotes" className="small-box-footer"> <i className="fas fa-arrow-circle-right" /></a>
+              <a href="quotes" className="small-box-footer" style={{backgroundColor:'lightgreen', fontSize:12}}>Stay motivated <i className="fas fa-arrow-circle-right" /></a>
             </div>
           </div>
           {/* ./col */}
