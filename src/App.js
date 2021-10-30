@@ -22,6 +22,7 @@ import Quotes from './components/Quotes';
 
 
 
+
 function App() {
   return (
     <div> 
@@ -60,9 +61,16 @@ function App() {
           <Route path = "/quotes" component ={Quotes}></Route>
           
           
-          <Route path="/" component={Topsmallboxes}></Route>
+          <div className="content-wrapper">
+            <Route path="/" component={Topsmallboxes}></Route>
+            {/*<Treereservation/>*/}
+          </div>
+          
         </Switch>
-     
+        
+        
+        
+        
         <Sidebar/>
       
         <Footer/>

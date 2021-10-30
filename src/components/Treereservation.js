@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 export default class Treereservation extends Component {
     render() {
         return (
-            <div className="content-wrapper">
+            <div >
             
-                <h2 style={{margin: 10}}>Title here for treehouse reservation system with pictures displayed below</h2>
+                
 
 
 
