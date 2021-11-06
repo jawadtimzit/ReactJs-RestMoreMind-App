@@ -13,6 +13,7 @@ export default class Sleep extends Component {
     render() {
         return (
             
+            <div className = "content-wrapper">
                 <div className = "container" style={{maxWidth:700, margin:'auto' }}> 
 
     <h1 style={{fontFamily:'sans-serif'}}>                
@@ -228,7 +229,7 @@ export default class Sleep extends Component {
     
                 </div>
                 
-
+                </div>
             
         )
     }

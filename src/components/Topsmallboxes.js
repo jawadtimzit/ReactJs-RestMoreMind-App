@@ -13,7 +13,7 @@ export default class Topsmallboxes extends Component {
             
 
 
-            <div  style={{backgroundColor:'white'}}>
+            <div className = "content-wrapper" style={{backgroundColor:'white'}}>
   
             <div className="content-header">
               <div className="container-fluid">

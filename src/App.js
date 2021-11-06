@@ -5,8 +5,6 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Sidebar from './components/Sidebar';
 import Topsmallboxes from './components/Topsmallboxes';
-import Treereservation from './components/Treereservation';
-import ListhousesComponent from './components/ListhousesComponent';
 import Contactus from './components/Contactus';
 import Calender from './components/Calender';
 import Signup from './components/Signup';
@@ -16,7 +14,8 @@ import Meditation from './components/Meditation';
 import Fitness from './components/Fitness';
 import Sleep from './components/Sleep';
 import Quotes from './components/Quotes';
-
+import Filtering from './components/Filtering';
+import Treelist from './components/Treelist';
 
 
 
@@ -37,6 +36,7 @@ function App() {
         <Link to = "/fitness"></Link>
         <Link to = "/sleep"></Link>
         <Link to = "/quotes"></Link>
+        <Link to = "/treehouses"></Link>
         
         
         
@@ -44,13 +44,10 @@ function App() {
 
 
 
-        <Header/> 
-        
-        
-        
-  
+        <Header/> {/*return header componenet in the pages everytime*/}
         
         <Switch>
+          {/*routing for the pages /  components */}
           <Route path="/pages/contactus" component={Contactus}></Route>
           <Route path ="/pages/signin" component = {Signin}></Route>
           <Route path = "/pages/signup" component ={Signup}></Route>
@@ -59,24 +56,34 @@ function App() {
           <Route path = "/fitness" component ={Fitness}></Route>
           <Route path = "/sleep" component ={Sleep}></Route>
           <Route path = "/quotes" component ={Quotes}></Route>
+          <Route path = "/treehouses" component ={Treelist}></Route>
+          
+        
           
           
-          <div className="content-wrapper">
+          <div>
             <Route path="/" component={Topsmallboxes}></Route>
             {/*<Treereservation/>*/}
+            <div>
+              <Filtering/>
+              
+
+            </div>
+            
           </div>
-          
         </Switch>
         
-        
-        
-        
-        <Sidebar/>
+       
+          
+           
+        <Treelist/> 
+          
+        <Sidebar/> {/*return the side bar everytime*/}
       
         <Footer/>
       </Router>
       
-    </div>
+    </div> 
     
       
           
