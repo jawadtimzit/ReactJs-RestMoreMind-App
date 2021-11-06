@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-
+import FitnessCarousel from './FitnessCarousel';
 export default class Fitness extends Component {
     render() {
         return (
-            <div>
+            <div className = "container" style={{marginLeft:250}}> 
                 
-                <h1 style={{margin:250}}>This is the fintess component</h1>
+                <FitnessCarousel> </FitnessCarousel>
 
             </div>
         )
