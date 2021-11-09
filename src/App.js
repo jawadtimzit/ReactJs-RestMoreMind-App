@@ -16,6 +16,10 @@ import Sleep from './components/Sleep';
 import Quotes from './components/Quotes';
 import Filtering from './components/Filtering';
 import Treelist from './components/Treelist';
+import Accountinfo from './components/Accountinfo';
+import Personalinfo from './components/Personalinfo';
+import Paymentinfo from './components/Paymentinfo';
+import Successpay from './components/Successpay';
 
 
 
@@ -37,6 +41,8 @@ function App() {
         <Link to = "/sleep"></Link>
         <Link to = "/quotes"></Link>
         <Link to = "/treehouses"></Link>
+        <Link to = "/payment"></Link>
+        <Link to = "/personalinfo"></Link>
         
         
         
@@ -58,6 +64,13 @@ function App() {
           <Route path = "/quotes" component ={Quotes}></Route>
           <Route path = "/treehouses" component ={Treelist}></Route>
           
+            
+          {/*payment forms routing*/}
+          <Route path="/accountinfo" component={Accountinfo}></Route>
+          <Route path="/personalinfo" component={Personalinfo}></Route>
+          <Route path="/paymentinfo" component={Paymentinfo}></Route>
+          <Route path="/successpay" component={Successpay}></Route>
+            
         
           
           

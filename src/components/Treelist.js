@@ -21,7 +21,7 @@ export default class Treelist extends Component {
 
         return (
             <div>
-                <h2 className="text-center"> Treehouseslist</h2>
+                <h2 className="text-center"> </h2>
                 <div className = "content-wrapper">
                                 
                                    { this.state.treehouses.map(
@@ -32,6 +32,7 @@ export default class Treelist extends Component {
                                            <p style={{marginLeft:'15px'}}> Treehouse Size : {treehouse.size} </p>
                                             <p style={{marginLeft:'15px'}}> Description : {treehouse.description} </p>
                                             <p style={{marginLeft:'15px'}}> Price : {treehouse.price} </p>
+                                            <a id = {treehouse.treehouseID} className ="btn btn-primary" href ="accountinfo">Reserve</a>
                                             
                                         </p>
                                         
