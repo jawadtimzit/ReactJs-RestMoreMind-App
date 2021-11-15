@@ -20,6 +20,8 @@ import Accountinfo from './components/Accountinfo';
 import Personalinfo from './components/Personalinfo';
 import Paymentinfo from './components/Paymentinfo';
 import Successpay from './components/Successpay';
+import Test from './components/Test';
+import Addusers from './components/Addusers';
 
 
 
@@ -27,6 +29,8 @@ import Successpay from './components/Successpay';
 
 
 function App() {
+  
+ {/*const TreehouseID = "treehouseid";*/}
   return (
     <div> 
       <Router>
@@ -43,6 +47,7 @@ function App() {
         <Link to = "/treehouses"></Link>
         <Link to = "/payment"></Link>
         <Link to = "/personalinfo"></Link>
+        <Link to ="/addusers${treehouse_id}"></Link>
         
         
         
@@ -52,7 +57,8 @@ function App() {
 
         <Header/> {/*return header componenet in the pages everytime*/}
         
-        <Switch>
+        {/*inside switch we configure routes*/}
+        <Switch> 
           {/*routing for the pages /  components */}
           <Route path="/pages/contactus" component={Contactus}></Route>
           <Route path ="/pages/signin" component = {Signin}></Route>
@@ -65,8 +71,10 @@ function App() {
           <Route path = "/treehouses" component ={Treelist}></Route>
           
             
-          {/*payment forms routing*/}
-          <Route path="/accountinfo" component={Accountinfo}></Route>
+          {/*checkout forms routing*/}
+          {/*<Route path="/addusers"  render={()=> < Addusers info = {TreehouseID}/>}></Route>*/}
+          <Route path="/addusers"  component = {Addusers}></Route>
+          {/*<Route path="/accountinfo" component={Accountinfo}></Route>*/}
           <Route path="/personalinfo" component={Personalinfo}></Route>
           <Route path="/paymentinfo" component={Paymentinfo}></Route>
           <Route path="/successpay" component={Successpay}></Route>
@@ -87,10 +95,10 @@ function App() {
         </Switch>
         
        
-          
-           
-        <Treelist/> 
-          
+         
+         
+        
+        
         <Sidebar/> {/*return the side bar everytime*/}
       
         <Footer/>

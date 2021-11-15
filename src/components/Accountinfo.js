@@ -1,10 +1,52 @@
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
+import axios from 'axios';
+import { accordionSummaryClasses } from '@mui/material';
 export default class Accountinfo extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email:"",
+      fname:"",
+      lname:"",
+      password:"",
+      phone:0,
+      credit_card:0
+    };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleInputChange(event) {
+    const target = event.target;
+    const value =  target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleSubmit(event) {
+    //alert('An essay was submitted: ' + event);
+    const user={
+      "email":this.state.email,
+      "fname":this.state.fname,
+      "lname":this.state.lname,
+      "password":this.state.password,
+      "phone":this.state.phone,
+      "credit_card":this.state.credit_card,
+      "email_Confirmed":"yes",
+      "isActive":1};
+    const reservation={"reservationID":0,"start_Date":"2021-11-10","end_Date":"2021-11-12","isactive":1,"admin_AdminSsn":1,"treehouse_TreehouseID":1,"payment_PaymentID":1}
+    const objectNew={"user":user,"reservation":reservation}
+    axios.post("http://localhost:8080/api/v1/saveReservation",objectNew);
+    console.log(objectNew);
+    event.preventDefault();
+  }
     render() {
         return (
-            
- <div className = "content-wrapper">              
+          
+ <div className = "content-wrapper" >              
 <div className="container-fluid" style={{backgroundColor: 'white',
 backgroundImage:'inherit(120deg, #FF4081, #81D4FA)'}} >
   <div className="row justify-content-center mt-0">
@@ -15,16 +57,8 @@ backgroundImage:'inherit(120deg, #FF4081, #81D4FA)'}} >
         <p style={{textAlign:'center'}}>Fill all form field to go to next step</p>
         <div className="row">
           <div className="col-md-12 mx-0">
-            <form style={{textAlign:'center', position:'relative', marginTop:'20px'}}>
-              {/* progressbar */}
-             {/*} <ul id="progressbar" style={{marginBottom:'30px', overflow:'hidden', color:'lightgrey', 
-            }}>
+            <form   onSubmit={this.handleSubmit} style={{textAlign:'center', position:'relative', marginTop:'20px'}}>
               
-                <li className="active" id="account" style={{color: '#000000', listStyleType:'none',fontSize:'12',width:'25',float:'left',position:'relative', content:'\f007'}}><strong>Account</strong></li> 
-                <li id="personal" style={{listStyleType:'none',fontSize:'12',width:'25',float:'left',position:'relative'}}><strong>Personal</strong></li>
-                <li id="payment" style={{listStyleType:'none',fontSize:'12',width:'25',float:'left',position:'relative'}}><strong>Payment</strong></li>
-                <li id="confirm" style={{listStyleType:'none',fontSize:'12',width:'25',float:'left',position:'relative'}}><strong>Finish</strong></li>
-              </ul> {/* fieldsets */}
               <fieldset style = {{ background:'white', border:'0', borderRadius:'0.5rem',
               boxSizing:'border-box', width: '100%', margin:'0', paddingBottom:'20px', position:'relative' }}>
                 
@@ -34,23 +68,19 @@ backgroundImage:'inherit(120deg, #FF4081, #81D4FA)'}} >
                 boxSizing: 'border-box', width:'94%', margin: '0 3% 20% 3%', position:'relative'}}>
                   
                   
-                  <h2 className="fs-title" style={{fontSize:'25', color:'#2C3E50', marginBottom:'10px',fontWeight:'bold', textAlign:'left'}}>Account Information</h2> <input type="email" name="email" placeholder="Email Id" style={{padding:'0px 8px 4px 8x',
-                  border:'none', borderBottom: '1px', borderRadius:'0px', marginBottom:'25px', marginTop:'2px', width:'100%', boxSizing:'border-box',
-                  fontFamily:'-moz-initial', color:'#2C3E50', fontSize:'16px', letterSpacing:'1px' , boxShadow:'none', border:'none', borderBottom:'2px', outlineWidth:'0' }}/> <input type="text" name="uname" placeholder="UserName" style={{padding:'0px 8px 4px 8x',
-                  border:'none', borderBottom: '1px', borderRadius:'0px', marginBottom:'25px', marginTop:'2px', width:'100%', boxSizing:'border-box',
-                  fontFamily:'-moz-initial', color:'#2C3E50', fontSize:'16px', letterSpacing:'1px' , boxShadow:'none', border:'none', borderBottom:'2px', outlineWidth:'0' }}/> <input type="password" name="pwd" placeholder="Password" style={{padding:'0px 8px 4px 8x',
-                  border:'none', borderBottom: '1px', borderRadius:'0px', marginBottom:'25px', marginTop:'2px', width:'100%', boxSizing:'border-box',
-                  fontFamily:'-moz-initial', color:'#2C3E50', fontSize:'16px', letterSpacing:'1px' , boxShadow:'none', border:'none', borderBottom:'2px', outlineWidth:'0' }}/> <input type="password" name="cpwd" placeholder="Confirm Password" 
-                  style={{padding:'0px 8px 4px 8x',
-                  border:'none', borderBottom: '1px', borderRadius:'0px', marginBottom:'25px', marginTop:'2px', width:'100%', boxSizing:'border-box',
-                  fontFamily:'-moz-initial', color:'#2C3E50', fontSize:'16px', letterSpacing:'1px' , boxShadow:'none', border:'none', borderBottom:'2px', outlineWidth:'0' }} />
+                  <h2 className="fs-title" style={{fontSize:'25', color:'#2C3E50', marginBottom:'10px',fontWeight:'bold', textAlign:'left'}}>Account Information</h2> 
+                  <input type="text" name="email" className="input-group-append" className="input-group-text" className="form-control" style={{marginTop:'20px'}}   onChange={this.handleInputChange}  value={this.state.email}  placeholder="Email"  /> 
+                  <input type="text" name="fname" className="input-group-append" className="input-group-text" className="form-control" style={{marginTop:'20px'}}    onChange={this.handleInputChange}  value={this.state.fname}  placeholder="First Name" />
+                  <input type="text" name="lname" className="input-group-append" className="input-group-text" className="form-control" style={{marginTop:'20px'}}       onChange={this.handleInputChange}  value={this.state.lname}  placeholder="Last Name" />
+                  <input type="password" name="password"  className="input-group-append" className="input-group-text" className="form-control" style={{marginTop:'20px'}} onChange={this.handleInputChange}  value={this.state.password}  placeholder="Password" /> 
+                  <input type="number" name="phone"  className="input-group-append" className="input-group-text" className="form-control" style={{marginTop:'20px'}}    onChange={this.handleInputChange}  value={this.state.phone}  placeholder="Phone Number" />
+                  <input type="number" name="credit_card"  className="input-group-append" className="input-group-text" className="form-control" style={{marginTop:'20px'}}  onChange={this.handleInputChange}  value={this.state.credit_card}  placeholder="Credit Card" />
+                  
+                  
                 </div> 
                
-                
-                <a className ="btn btn" href ="personalinfo" style={{width:'100px', background:'skyblue', fontWeight:'bold', color:'white',
-                border:'0', borderRadius:'0px', cursor:'pointer', padding:'10px 5px', margin:'10px 5px', boxShadow:'0 0 0 2px white, 0 0 0 3px skyblue'
-                
-              }} > Next Step</a>
+                <button type="submit">Submit</button>
+                 {/*<a className="btn btn-primary" href ="personalinfo" style={{width:''}} > Next Step</a>*/}
               
               
               </fieldset>
