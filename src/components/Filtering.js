@@ -17,19 +17,17 @@ export default class Filtering extends Component {
           </div>
           <div className="card-body">
             <div>
-             {/*
+             
               <div className="btn-group w-100 mb-2" className="float-left" style={{marginBottom:'10px'}}>
                   &nbsp;&nbsp;
-                <a className="btn btn-light" href="javascript:void(0)" data-filter={1}> Select by City Name </a>
+              {/*when the button is clicked we will navigate to list of treehouses*/}
+              <a className="btn btn-success" href="treehouses" data-filter={1}> Display All Trees </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a className="btn btn-light" href="javascript:void(0)" data-filter={2}> Select by Price </a>
+              {/*    <a className="btn btn-light" href="javascript:void(0)" data-filter={2}> Select by Price </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a style={{}}className="btn btn-light" href="javascript:void(0)" data-filter={3}> Select by Size </a>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a className="btn btn-light" href="javascript:void(0)" data-filter={3}> Select by Category </a>
                 
         </div> 
-             */}
+            
               <div className="mb-2">
                 {/*can fix width to 2 px if want select buttons to be sided on left*/}
                 <div className="float-left" >
