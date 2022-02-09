@@ -10,6 +10,9 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import Logo from '../logo192.png'
+import { ReactAudio } from 'reactjs-media';
+
+
 export default function MediaControlCard() {
   const theme = useTheme();
 
@@ -24,13 +27,17 @@ export default function MediaControlCard() {
             Mac Miller
           </Typography>
         </CardContent>
+        
         <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
+          
           <IconButton aria-label="previous">
             {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
           </IconButton>
+          
           <IconButton aria-label="play/pause">
             <PlayArrowIcon sx={{ height: 38, width: 38 }} />
           </IconButton>
+
           <IconButton aria-label="next">
             {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
           </IconButton>

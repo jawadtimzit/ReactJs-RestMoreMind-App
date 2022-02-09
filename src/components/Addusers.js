@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import { matchPath } from 'react-router-dom';
 import treehouseservice from '../services/treehouseservice';
-import Treelist from './Treelist';
 export default class Addusers extends Component {
   constructor(props) {
     super(props)
 
      {/* create attribute proprities for the states and initialize them
-     this prorties will help to get data and this data will be available in form submission
+     this proprities will help to get data and this data will be available in form submission
      so we add those proprities to the state and we get data from the input field, bring them inside these 
-    proprities and this proprities data will be availabe upon submission ---se we declare prprities empty
+    proprities and this proprities data will be availabe upon submission ---se we declare proprities empty
     then as soon as we enter something in text field the event handler will get called and will extract value from this 
     input and we use setstate method to aasign the value to the proprities I have fname lname etc*/}
 
@@ -20,10 +18,8 @@ export default class Addusers extends Component {
       password:"",
       phone:null,
       credit_card:null,
-
-     
-      
-    }
+      treehouseId:0
+     }
 
     {/*bind the methods that we passed*/}
     this.changeEmailHandler = this.changeEmailHandler.bind(this);
@@ -32,39 +28,37 @@ export default class Addusers extends Component {
     this.changePasswordHandler = this.changePasswordHandler.bind(this);
     this.changePhoneNumberhandler = this.changePhoneNumberhandler.bind(this);
     this.changeCreditCardHandler = this.changeCreditCardHandler.bind(this);
-    
-
 }
 
-  
+componentDidMount(){
+  this.setState({treehouseId : this.props.match.params.id});
+   //this.props.match.params.id;
+       
+   }
   saveUsers=(e)=>{  {/*save method to save users*/}
       e.preventDefault();
       {/* since data are set in state proprities lets get data here inside save employee method, sowe get data to object user */}
       let user = {email:this.state.email, fname:this.state.fname, lname:this.state.lname, password:this.state.password,
         phone:this.state.phone, credit_card:this.state.credit_card, email_confirmed:"yes",
-        isActive:1};
-        {/* I added console here just to be able to see data in console*/}
-        
-        
-
-      {/*create/save user and navigate to personalinfo page upon submissmion*/ }
-        treehouseservice.createUser(user).then(res=>{
-            this.props.history.push('/personalinfo');
-            
-        });
-        
+        isActive:1};       
+      
+      {/*create/save user and navigate to reservation page upon submissmion*/ }
+      if(this.state.email!="" && this.state.fname!="" && this.state.lname!="" && this.state.password!="" && this.state.phone!=null &&this.state.credit_card!=null && this.state.phone!="" && this.state.credit_card!="")
+      {
+        treehouseservice.createUser(user).then((res)=>{
+          //navigate to reservation page to push link and pass userid and treehouseid to reservation componenet
+          this.props.history.push('/Reservation/'+res.data.userID+'/'+this.state.treehouseId);
+          
+      });
+      }
+      else{
+        alert("Please Fill All Fields");
+      }
+          
   }
 
-  
-
-
-  
- 
-  
-
-  
-  cancel(){ {/*routing the cancel button to treehouses list whenever the button is clicked*/}
-    this.props.history.push('/treehouses');
+  cancel(){ {/*routing the cancel button to home page whenever the button is clicked*/}
+    this.props.history.push('/');
   }
 
  
@@ -97,34 +91,28 @@ export default class Addusers extends Component {
   
   }
 
-  
     render() {
-
-       
         return (
-
-            
-       
- <div className = "content-wrapper" >       {/*create the form and card with some boostrap classes*/}       
-<div className="container-fluid" style={{backgroundColor: 'white',
-backgroundImage:'inherit(120deg, #FF4081, #81D4FA)'}} >
-  <div className="row justify-content-center mt-0">
-    <div className="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
-      <div className="card px-0 pt-4 pb-0 mt-3 mb-3" style={{zIndex:'0', border:'none',
-    borderRadius:'0.5rem', position:'relative'}}>
-        <h2 style={{textAlign:'center'}}><strong>Sign Up Your User Account</strong></h2>
-        <p style={{textAlign:'center'}}>Fill all form field to go to next step</p>
-        <div className="row">
-          <div className="col-md-12 mx-0">
-            <form>
+        <div className = "content-wrapper" >       {/*create the form and card with some boostrap classes*/}       
+          <div className="container-fluid" style={{backgroundColor: 'white',
+          backgroundImage:'inherit(120deg, #FF4081, #81D4FA)'}} >
+            <div className="row justify-content-center mt-0">
+              <div className="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+                <div className="card px-0 pt-4 pb-0 mt-3 mb-3" style={{zIndex:'0', border:'none',
+                  borderRadius:'0.5rem', position:'relative'}}>
+                  <h2 style={{textAlign:'center'}}><strong>Sign Up Your User Account</strong></h2>
+                  <p style={{textAlign:'center'}}>Fill all form field to go to next step</p>
+                  <div className="row">
+                    <div className="col-md-12 mx-0">
+                  <form>
               
-              <fieldset style = {{ background:'white', border:'0', borderRadius:'0.5rem',
-              boxSizing:'border-box', width: '100%', margin:'0', paddingBottom:'20px', position:'relative' }}>
+                  <fieldset style = {{ background:'white', border:'0', borderRadius:'0.5rem',
+                  boxSizing:'border-box', width: '100%', margin:'0', paddingBottom:'20px', position:'relative' }}>
                 
                 
-                <div className="form-card" style={{textAlign:'left', color:'#9E9E9E', background:'white', border:'none', borderRadius:'o',
-                boxShadow:'0 2px 2px 2px', padding:'20px 40px 30px 40px', 
-                boxSizing: 'border-box', width:'94%', margin: '0 3% 20% 3%', position:'relative'}}>
+                  <div className="form-card" style={{textAlign:'left', color:'#9E9E9E', background:'white', border:'none', borderRadius:'o',
+                  boxShadow:'0 2px 2px 2px', padding:'20px 40px 30px 40px', 
+                  boxSizing: 'border-box', width:'94%', margin: '0 3% 20% 3%', position:'relative'}}>
                   
                   
                   <h2 className="fs-title" style={{fontSize:'25', color:'#2C3E50', marginBottom:'10px',fontWeight:'bold', textAlign:'left'}}>Account Information</h2> 
@@ -138,21 +126,15 @@ backgroundImage:'inherit(120deg, #FF4081, #81D4FA)'}} >
                   
                   
                 </div> 
-                <div>
-                <input type = "text" value = {this.props.info}/>
-                </div>
-
+                
                 {/*create next step button that will submit user and navigate to next page that will be defined in saveUsers method*/}
                 <button className="btn btn-danger"  onClick={this.cancel.bind(this)}    style={{width:''}} > Cancel</button>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 
                  {/*create next step button that will submit user data and navigate to next page that will be defined in saveUsers method
                  whenevr the save gets clicked the event handler gets called. I can bind it here or bind it in the constructor*/}
-                 <button className="btn btn-primary"  onClick={this.saveUsers.bind(this)}    style={{marginLeft:'100px'}} > Save / Next Step</button>
-                
-                
-                 
-              
+                 <button className="btn btn-primary"  onClick={this.saveUsers.bind(this)}    style={{marginLeft:'100px'}} > Next Step</button>
+
               </fieldset>
             </form>
           </div>
@@ -162,9 +144,6 @@ backgroundImage:'inherit(120deg, #FF4081, #81D4FA)'}} >
   </div>
 </div>
 </div> 
-
-
-
             
         )
     }

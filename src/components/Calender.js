@@ -2,59 +2,54 @@ import React, { Component } from 'react'
 
 export default class Calender extends Component {
     render() {
-        return (
-            
-
-
-           
-
-           
-<div className="content-wrapper">
-  {/* Content Header (Page header) */}
-  <section className="content-header">
-    <div className="container-fluid">
-      <div className="row mb-2">
-        <div className="col-sm-6">
-          <h1>Calendar</h1>
-        </div>
-        <div className="col-sm-6">
-          <ol className="breadcrumb float-sm-right">
-            <li className="breadcrumb-item"><a href="#">Home</a></li>
-            <li className="breadcrumb-item active">Calendar</li>
-          </ol>
-        </div>
-      </div>
-    </div>{/* /.container-fluid */}
-  </section>
-  {/* Main content */}
-  <section className="content">
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-md-3">
-          <div className="sticky-top mb-3">
-            <div className="card">
-              <div className="card-header">
-                <h4 className="card-title">Draggable Events</h4>
-              </div>
-              <div className="card-body">
-                {/* the events */}
-                <div id="external-events">
-                  <div className="external-event bg-success">Lunch</div>
-                  <div className="external-event bg-warning">Go home</div>
-                  <div className="external-event bg-info">Do homework</div>
-                  <div className="external-event bg-primary">Work on UI design</div>
-                  <div className="external-event bg-danger">Sleep tight</div>
-                  <div className="checkbox">
-                    <label htmlFor="drop-remove">
-                      <input type="checkbox" id="drop-remove" />
-                      remove after drop
-                    </label>
+        return (                 
+          <div className="content-wrapper">
+          {/* Content Header (Page header) */}
+            <section className="content-header">
+              <div className="container-fluid">
+                <div className="row mb-2">
+                  <div className="col-sm-6">
+                   <h1></h1>
                   </div>
+                <div className="col-sm-6">
+                  <ol className="breadcrumb float-sm-right">
+                    <li className="breadcrumb-item"><a href="#">home</a></li>
+                    <li className="breadcrumb-item active">events</li>
+                  </ol>
                 </div>
               </div>
-              {/* /.card-body */}
-            </div>
-            {/* /.card */}
+          </div>{/* /.container-fluid */}
+          
+          </section>
+          {/* Main content */}
+            <section className="content">
+              <div className="container-fluid">
+                <div className="row">
+                  <div className="col-md-3">
+                    <div className="sticky-top mb-3">
+                      <div className="card">
+                        <div className="card-header">
+                          <h4 className="card-title">Draggable Events</h4>
+                        </div>
+                        <div className="card-body">
+                          {/* the events */}
+                            <div id="external-events">
+                            <div className="external-event bg-success">Lunch</div>
+                            <div className="external-event bg-warning">Go home</div>
+                            <div className="external-event bg-info">Do homework</div>
+                            <div className="external-event bg-primary">Work on UI design</div>
+                            <div className="external-event bg-danger">Sleep tight</div>
+                            <div className="checkbox">
+                              <label htmlFor="drop-remove">
+                              <input type="checkbox" id="drop-remove" />
+                              remove after drop
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      {/* /.card-body */}
+                    </div>
+                  {/* /.card */}
             <div className="card">
               <div className="card-header">
                 <h3 className="card-title">Create Event</h3>
@@ -100,18 +95,6 @@ export default class Calender extends Component {
   </section>
   {/* /.content */}
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
         )
     }

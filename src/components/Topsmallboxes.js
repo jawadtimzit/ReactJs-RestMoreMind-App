@@ -9,12 +9,7 @@ export default class Topsmallboxes extends Component {
   
   render() {
         return (
-            
-            
-
-
-            <div className = "content-wrapper" style={{backgroundColor:'white'}}>
-  
+            <div style={{backgroundColor:''}}>
             <div className="content-header">
               <div className="container-fluid">
                 <div className="row mb-2">
